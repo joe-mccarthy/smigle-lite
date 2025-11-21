@@ -3,7 +3,7 @@ languageCode: en-gb
 title: Example Smigle Lite
 theme: ../.
 
-paginate: 10
+pagination.pagerSize: 10
 
 menu:
   main:

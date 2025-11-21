@@ -3,7 +3,7 @@ languageCode: en-gb
 title: Site Title
 theme: smigle
 
-paginate: 10
+pagination.pagerSize: 10
 
 menu:
   main:

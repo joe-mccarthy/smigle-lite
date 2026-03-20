@@ -1,0 +1,45 @@
+name: Hugo Smoke Test
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hugo-smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.128.0'
+          extended: true
+
+      - name: Build example site
+        working-directory: example-site
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --themesDir ../../ \
+            --theme smigle-lite \
+            --destination ../.public
+
+      - name: Verify output exists
+        run: test -f .public/index.html

@@ -153,6 +153,10 @@ menu:
     name: Tags
     url: /tags/
     weight: 6
+  - identifier: series
+    name: Series
+    url: /series/
+    weight: 7
 ```
 
 ### Theme Parameters
@@ -215,7 +219,10 @@ Configure how content is categorized:
 taxonomies:
   tags: tags  # URL will be /tags/tag-name/
   category: categories  # URL will be /categories/category-name/
+  series: series  # URL will be /series/series-name/
 ```
+
+When `series` is enabled, the theme renders a dedicated `/series/` terms page, individual series listing pages, and a `Series` navigation link (unless you already define one in your menu).
 
 You can add custom taxonomies or rename existing ones through this configuration.
 
@@ -253,6 +260,10 @@ menu:
     name: Tags
     url: /tags/
     weight: 6
+  - identifier: series
+    name: Series
+    url: /series/
+    weight: 7
 
 params:
   description: "This is the example site description. From Configuration"
@@ -276,6 +287,7 @@ params:
 taxonomies:
   tags: tags
   category: categories
+  series: series
 ```
 
 This configuration should be saved as `config.yaml` in your Hugo site's root directory.
@@ -293,6 +305,7 @@ date: 2023-07-15T10:00:00
 draft: false
 categories: ["Technology"]
 tags: ["hugo", "tutorial"]
+series: ["Getting Started"]
 summary: "A quick introduction to Smigle Lite"
 ---
 ```
@@ -348,6 +361,7 @@ date: 2023-07-15T10:00:00-05:00
 draft: false
 categories: ["Technology"]
 tags: ["hugo", "tutorial"]
+series: ["Getting Started"]
 summary: "Optional summary that will be displayed in lists"
 ---
 ```

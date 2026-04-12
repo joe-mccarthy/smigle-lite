@@ -27,6 +27,10 @@ menu:
     name: Tags
     url: /tags/
     weight: 6
+  - identifier: series
+    name: Series
+    url: /series/
+    weight: 7
 
 params:
   description: "This is the example site description. From Configuration"
@@ -50,3 +54,4 @@ params:
 taxonomies:
   tags: tags
   category: categories
+  series: series

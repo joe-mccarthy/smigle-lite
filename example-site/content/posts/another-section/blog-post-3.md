@@ -5,6 +5,7 @@ draft: false
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper.
 tags: ["tag 1", "tag 2"]
 categories: ["category 1", "category 2"]
+series: ["Getting Started"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut etiam sit amet nisl purus. Gravida dictum fusce ut placerat orci. Euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Laoreet sit amet cursus sit amet dictum sit amet justo. Rhoncus est pellentesque elit ullamcorper. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis. In arcu cursus euismod quis viverra nibh cras. Commodo ullamcorper a lacus vestibulum sed arcu. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Enim sit amet venenatis urna cursus eget nunc scelerisque viverra. Lectus urna duis convallis convallis. Consequat mauris nunc congue nisi vitae suscipit tellus mauris a. Nibh mauris cursus mattis molestie a iaculis.

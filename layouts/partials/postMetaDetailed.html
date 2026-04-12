@@ -23,4 +23,13 @@
       {{- end }}
     </div>
   {{ end }}
+  {{ with .Params.series }}
+    <div>
+      <span>Series:</span>
+      {{ range $key, $value := . }}
+        {{- if $key }}, {{ end }}
+        <a href = "{{ $.Site.BaseURL }}series/{{ $value | urlize | lower  }}">{{$value}}</a>
+      {{- end }}
+    </div>
+  {{ end }}
 </div>

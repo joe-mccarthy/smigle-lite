@@ -5,6 +5,7 @@ draft: false
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper.
 tags: ["tag 1", "tag 2"]
 categories: ["category 1", "category 2"]
+series: ["Getting Started"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut etiam sit amet nisl purus. Gravida dictum fusce ut placerat orci.

@@ -44,6 +44,7 @@
   --codebgcolor: #eef4f1;
   --fontfamily: "JetBrains Mono", monospace;
   --maxwidth: 800px;
+  --radius: 6px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -578,7 +579,7 @@ pre code {
 
 .site-search button {
   padding: 0 1rem;
-  color: var(--codebg);
+  color: var(--codebgcolor);
   background: var(--accentcolor);
   cursor: pointer;
 }

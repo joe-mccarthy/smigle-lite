@@ -6,11 +6,16 @@
     {{ $currentPage := . }}
     {{ with .Site.Menus.main }}
       {{ range $index, $value := . }}
+        {{ $menuURL := .URL }}
+        {{ $hasScheme := gt (len (findRE "^[a-zA-Z][a-zA-Z0-9+.-]*:" $menuURL)) 0 }}
+        {{ $isExternal := or $hasScheme (hasPrefix $menuURL "//") }}
+        {{ $href := $menuURL }}
+        {{ if not $isExternal }}{{ $href = $menuURL | relURL }}{{ end }}
         {{ $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
         {{ if and (not $active) (eq .Identifier "home") $currentPage.IsHome }}{{ $active = true }}{{ end }}
-        {{ if and (not $active) (ne .Identifier "home") (hasPrefix $currentPage.RelPermalink .URL) }}{{ $active = true }}{{ end }}
+        {{ if and (not $active) (not $isExternal) (ne .Identifier "home") (hasPrefix $currentPage.RelPermalink $href) }}{{ $active = true }}{{ end }}
         {{ if $index }} | {{ end }}
-        <a href="{{ .URL }}"{{ if $active }} aria-current="page"{{ end }}><b>{{ .Name }}</b></a>
+        <a href="{{ $href }}"{{ if $active }} aria-current="page"{{ end }}><b>{{ .Name }}</b></a>
       {{ end }}
     {{ end }}
   </nav>

@@ -566,7 +566,7 @@ pre code {
 .site-search button {
   min-height: 2.75rem;
   border: 1px solid var(--bordercolor);
-  border-radius: var(--radius);
+  border-radius: var(--radius, 6px);
   font: inherit;
 }
 
@@ -579,7 +579,7 @@ pre code {
 
 .site-search button {
   padding: 0 1rem;
-  color: var(--codebgcolor);
+  color: var(--bgcolor);
   background: var(--accentcolor);
   cursor: pointer;
 }

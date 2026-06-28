@@ -9,8 +9,8 @@
         <link href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
         <script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
         <script>
-          window.addEventListener("DOMContentLoaded", function () {
-            new PagefindUI({ element: "#search-ui", showSubResults: true });
+          globalThis.addEventListener("DOMContentLoaded", function () {
+            globalThis.pagefindUI = new globalThis.PagefindUI({ element: "#search-ui", showSubResults: true });
           });
         </script>
       {{ else }}
@@ -74,26 +74,13 @@
               };
             });
 
-            function escapeHTML(value) {
-              return String(value).replace(/[&<>"']/g, function (character) {
-                return {
-                  "&": "&amp;",
-                  "<": "&lt;",
-                  ">": "&gt;",
-                  '"': "&quot;",
-                  "'": "&#39;"
-                }[character];
-              });
-            }
-
             function getScore(entry, words) {
               var score = 0;
               var title = entry.title.toLowerCase();
               var summary = entry.summary.toLowerCase();
               var terms = entry.terms.join(" ").toLowerCase();
 
-              for (var index = 0; index < words.length; index += 1) {
-                var word = words[index];
+              for (var word of words) {
                 if (!entry.haystack.includes(word)) {
                   return 0;
                 }
@@ -114,7 +101,7 @@
             }
 
             function render(matches, query) {
-              results.innerHTML = "";
+              results.textContent = "";
 
               if (query.length < 2) {
                 status.textContent = "Type at least 2 characters.";
@@ -127,17 +114,35 @@
               }
 
               status.textContent = matches.length + (matches.length === 1 ? " result" : " results");
-              results.innerHTML = matches.map(function (match) {
+              var fragment = document.createDocumentFragment();
+
+              matches.forEach(function (match) {
                 var entry = match.entry;
                 var meta = [entry.date].concat(entry.terms).filter(Boolean).join(" - ");
-                return [
-                  "<li>",
-                  '<a href="' + escapeHTML(entry.url) + '">' + escapeHTML(entry.title) + "</a>",
-                  meta ? '<p class="search-result-meta">' + escapeHTML(meta) + "</p>" : "",
-                  entry.summary ? "<p>" + escapeHTML(entry.summary) + "</p>" : "",
-                  "</li>"
-                ].join("");
-              }).join("");
+                var item = document.createElement("li");
+                var link = document.createElement("a");
+
+                link.href = entry.url;
+                link.textContent = entry.title;
+                item.appendChild(link);
+
+                if (meta) {
+                  var metaElement = document.createElement("p");
+                  metaElement.className = "search-result-meta";
+                  metaElement.textContent = meta;
+                  item.appendChild(metaElement);
+                }
+
+                if (entry.summary) {
+                  var summaryElement = document.createElement("p");
+                  summaryElement.textContent = entry.summary;
+                  item.appendChild(summaryElement);
+                }
+
+                fragment.appendChild(item);
+              });
+
+              results.appendChild(fragment);
             }
 
             function runSearch() {
@@ -169,7 +174,7 @@
             });
             input.addEventListener("input", runSearch);
 
-            var queryParam = new URLSearchParams(window.location.search).get("q");
+            var queryParam = new URLSearchParams(globalThis.location.search).get("q");
             if (queryParam) {
               input.value = queryParam;
             }

@@ -9,7 +9,8 @@
 {{ else if eq .Params.toc true }}
   {{ $showToc = true }}
 {{ end }}
-{{ if and $showToc (in .TableOfContents "<li>") }}
+{{ $listItem := printf "<%s>" "li" }}
+{{ if and $showToc (in .TableOfContents $listItem) }}
   <aside class="table-of-contents" aria-labelledby="toc-title">
     <h2 id="toc-title">{{ default "Contents" .Site.Params.toc.title }}</h2>
     {{ .TableOfContents }}

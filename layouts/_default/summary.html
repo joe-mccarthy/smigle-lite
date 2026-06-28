@@ -7,7 +7,7 @@
   <div class="content">
     {{ .Summary }}
     {{ if .Truncated }}
-      <a href="{{ .RelPermalink }}" aria-label="Read more: {{ .Title }}">Read more...</a>
+      <a href="{{ .RelPermalink }}">Read more: {{ .Title }}</a>
     {{ end }}
   </div>
 </article>

@@ -12,9 +12,9 @@ Smigle Lite is a minimalist Hugo theme focused on simplicity, performance, and p
 
 ### Core Principles
 
-* **No JavaScript** - Pure HTML and CSS for maximum performance
+* **No JavaScript by Default** - Pure HTML and CSS unless optional static search is enabled
 * **No Tracking** - No Google analytics, cookies, or any user tracking
-* **No External Dependencies** - No external fonts, comment sections, or CDN resources
+* **No Runtime External Dependencies** - Bundled JetBrains Mono, no comment sections, tracking, or CDN resources
 * **Minimal Design** - Focus on content without distractions
 
 ## Features
@@ -28,6 +28,13 @@ Smigle Lite streamlines the original theme by:
 * Removing reading time estimates
 * Removing word count displays
 * Simplifying post metadata presentation
+* Bundling JetBrains Mono locally
+* Improving prose, table, figure, blockquote, footnote, and code styling
+* Adding optional table of contents support
+* Adding optional static search with a built-in provider and Pagefind support
+* Adding JSON-LD, Open Graph, Twitter card, canonical, and author metadata
+* Adding accessible skip links and active navigation state
+* Adding small content shortcodes for figures, asides, details, and external links
 * Redesigning taxonomy pages as simple lists with counts
 * Updating the footer with proper attributions
 * Various spacing improvements and CSS optimizations
@@ -39,9 +46,7 @@ Smigle Lite streamlines the original theme by:
 ```
 smigle-lite/
 ├── archetypes/         # Template files for new content
-├── assets/             # CSS and other asset files
-├── exampleSite/        # Demo site with example content
-├── i18n/               # Internationalization files
+├── example-site/       # Demo site with example content
 ├── layouts/            # Hugo template files
 └── static/             # Static files (images, etc.)
 ```
@@ -105,11 +110,11 @@ To see a demo of the theme:
 
 ```bash
 git clone https://github.com/joe-mccarthy/smigle-lite
-cd smigle-lite/exampleSite
-hugo server --themesDir ../..
+cd smigle-lite/example-site
+hugo server --themesDir ../.. --theme smigle-lite
 ```
 
-Then visit [http://localhost:1313](http://localhost:1313) in your browser.
+Then visit [http://localhost:1313/smigle-lite/](http://localhost:1313/smigle-lite/) in your browser.
 
 ## Configuration Reference
 
@@ -118,12 +123,16 @@ Smigle Lite offers extensive configuration options to customize your site. Below
 ### Basic Configuration
 
 ```yaml
-baseURL: localhost  # Your site's base URL
+baseURL: https://example.org/  # Your site's base URL
 languageCode: en-gb  # Language code for your site
 title: Site Title  # Your site's title
-theme: smigle  # Theme name (should be set to smigle-lite)
+theme: smigle-lite  # Theme name
 
-paginate: 10  # Number of posts per page
+pagination.pagerSize: 10  # Number of posts per page
+
+markup:
+  highlight:
+    noClasses: false  # Use the theme's Chroma CSS classes
 ```
 
 ### Menu Configuration
@@ -157,6 +166,10 @@ menu:
     name: Series
     url: /series/
     weight: 7
+  - identifier: search
+    name: Search
+    url: /search/
+    weight: 8
 ```
 
 ### Theme Parameters
@@ -165,10 +178,42 @@ Smigle Lite provides several customization parameters:
 
 ```yaml
 params:
+  # Site author (appears in the footer)
+  author: Blog Author
+
   # Site description (appears in metadata)
   description: "This is the example site description. From Configuration"
-  
-  # Latest posts section on homepage
+
+  # Default Open Graph / Twitter image
+  images:
+  - android-chrome-512x512.png
+
+  # Sections shown on the home page and latest-post lists
+  mainSections:
+  - posts
+
+  # Visual customization
+  style:
+    maxWidth: 820px
+    accentColor: "#386f64"
+    darkAccentColor: "#9cd4c2"
+
+  # Display toggles
+  display:
+    footerAttribution: true
+    taxonomyMeta: true
+
+  # Table of contents on single posts with headings
+  toc:
+    enabled: true
+    title: Contents
+
+  # Optional static search. Use "simple" or "pagefind".
+  search:
+    enabled: true
+    provider: simple
+
+  # Latest posts section on single post pages
   latest:
     enabled: true  # Enable/disable latest posts section
     count: 3  # Number of posts to display
@@ -187,7 +232,7 @@ params:
   - name: GitHub
     url: https://github.com/joe-mccarthy/smigle-lite
   - name: "RSS"
-    url: /index.xml
+    url: index.xml
   
   # Post navigation options
   post_nav:
@@ -217,26 +262,30 @@ Configure how content is categorized:
 
 ```yaml
 taxonomies:
-  tags: tags  # URL will be /tags/tag-name/
   category: categories  # URL will be /categories/category-name/
+  tag: tags  # URL will be /tags/tag-name/
   series: series  # URL will be /series/series-name/
 ```
 
-When `series` is enabled, the theme renders a dedicated `/series/` terms page, individual series listing pages, and a `Series` navigation link (unless you already define one in your menu).
+When `series` is enabled, the theme renders a dedicated `/series/` terms page and individual series listing pages. Add a `Series` menu item if you want it in the main navigation.
 
-You can add custom taxonomies or rename existing ones through this configuration.
+The theme ships layouts for categories, tags, and series. Additional custom taxonomies should provide matching layouts in your site.
 
 ## Complete Example Configuration
 
 For reference, here's a complete example configuration that demonstrates all available options:
 
 ```yaml
-baseURL: localhost
+baseURL: https://example.org/
 languageCode: en-gb
 title: Site Title
 theme: smigle-lite
 
-paginate: 10
+pagination.pagerSize: 10
+
+markup:
+  highlight:
+    noClasses: false
 
 menu:
   main:
@@ -264,9 +313,31 @@ menu:
     name: Series
     url: /series/
     weight: 7
+  - identifier: search
+    name: Search
+    url: /search/
+    weight: 8
 
 params:
+  author: Blog Author
   description: "This is the example site description. From Configuration"
+  images:
+  - android-chrome-512x512.png
+  mainSections:
+  - posts
+  style:
+    maxWidth: 820px
+    accentColor: "#386f64"
+    darkAccentColor: "#9cd4c2"
+  display:
+    footerAttribution: true
+    taxonomyMeta: true
+  toc:
+    enabled: true
+    title: Contents
+  search:
+    enabled: true
+    provider: simple
   latest:
     enabled: true
     count: 3
@@ -279,14 +350,14 @@ params:
   - name: GitHub
     url: https://github.com/joe-mccarthy/smigle-lite
   - name: "RSS"
-    url: /index.xml
+    url: index.xml
   post_nav:
     enabled: true
     show_title: false
 
 taxonomies:
-  tags: tags
   category: categories
+  tag: tags
   series: series
 ```
 
@@ -307,6 +378,9 @@ categories: ["Technology"]
 tags: ["hugo", "tutorial"]
 series: ["Getting Started"]
 summary: "A quick introduction to Smigle Lite"
+images:
+- posts/my-first-post/cover.jpg
+toc: true
 ---
 ```
 
@@ -325,12 +399,20 @@ menu:
 
 ### Custom CSS
 
-To add your own CSS customizations, create a file at `assets/css/custom.css` in your site root. This will be automatically included.
+To add your own CSS customizations, create a file such as `static/css/custom.css` in your site root and list it under `params.customStylesheets`.
+
+Example configuration:
+
+```yaml
+params:
+  customStylesheets:
+  - css/custom.css
+```
 
 Example custom CSS:
 
 ```css
-/* assets/css/custom.css */
+/* static/css/custom.css */
 body {
   font-family: 'Your Preferred Font', sans-serif;
 }
@@ -368,17 +450,63 @@ summary: "Optional summary that will be displayed in lists"
 
 ## Advanced Usage
 
+### Table of Contents
+
+Set `params.toc.enabled: true` to show a generated table of contents on single pages that contain headings. Override it per page:
+
+```yaml
+---
+toc: false
+---
+```
+
 ### Custom Shortcodes
 
-Smigle Lite supports all built-in Hugo shortcodes plus any you create in your site's `layouts/shortcodes` directory.
+Smigle Lite includes a few small shortcodes:
+
+```markdown
+{{< figure src="image.jpg" alt="Description" caption="A local image caption." >}}
+
+{{< aside title="Note" >}}
+Short supporting text.
+{{< /aside >}}
+
+{{< details summary="More context" >}}
+Hidden-by-default details.
+{{< /details >}}
+
+{{< external-link href="https://gohugo.io/" text="Hugo documentation" >}}
+```
 
 ### Image Handling
 
-For responsive images:
+Markdown images are responsive by default. For captions, use the bundled figure shortcode:
 
 ```markdown
-{{< figure src="/images/my-image.jpg" title="Image Title" alt="Image description" >}}
+{{< figure src="/images/my-image.jpg" alt="Image description" caption="Image caption" >}}
 ```
+
+For social previews, set `images` in page front matter or `params.images` in your site config.
+
+### Syntax Highlighting
+
+The theme provides Chroma class styles. Enable class-based highlighting:
+
+```yaml
+markup:
+  highlight:
+    noClasses: false
+```
+
+### Static Search
+
+Search is optional and off by default. The built-in `simple` provider creates a small client-side index from regular Hugo pages:
+
+1. Create a search page with `layout: search`
+2. Set `params.search.enabled: true`
+3. Set `params.search.provider: simple`
+
+For larger sites, set `params.search.provider: pagefind`, build the Hugo site, then run Pagefind against the generated site, for example `pagefind --site public`. The Pagefind provider loads `/pagefind/pagefind-ui.css` and `/pagefind/pagefind-ui.js` from your own site.
 
 ### Taxonomies
 

@@ -2,11 +2,13 @@
   <strong>
     <span>Posted on</span>
     <time>{{ .Date.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}</time>
-    {{ with .Params.categories }}<span>in</span>{{ end }}
-    {{ range $key, $value := .Params.categories -}}
-      {{- if $key }}, {{ end }}
-      <a href = "{{ $.Site.BaseURL }}categories/{{ $value | urlize | lower  }}">{{$value}}</a>
-    {{- end }}
+    {{ if ne .Site.Params.display.taxonomyMeta false }}
+      {{ with .GetTerms "categories" }}<span>in</span>{{ end }}
+      {{ range $key, $value := .GetTerms "categories" -}}
+        {{- if $key }}, {{ end }}
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{- end }}
+    {{ end }}
   </strong>
   {{ if and .IsPage (ne .Date .Lastmod) }}
     <div>
@@ -14,22 +16,24 @@
       <time>{{ .Lastmod.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}</time>
     </div>
   {{ end }}
-  {{ with .Params.tags }}
-    <div>
-      <span>Tags:</span>
-      {{ range $key, $value := . }}
-        {{- if $key }}, {{ end }}
-        <a href = "{{ $.Site.BaseURL }}tags/{{ $value | urlize | lower  }}">{{$value}}</a>
-      {{- end }}
-    </div>
-  {{ end }}
-  {{ with .Params.series }}
-    <div>
-      <span>Series:</span>
-      {{ range $key, $value := . }}
-        {{- if $key }}, {{ end }}
-        <a href = "{{ $.Site.BaseURL }}series/{{ $value | urlize | lower  }}">{{$value}}</a>
-      {{- end }}
-    </div>
+  {{ if ne .Site.Params.display.taxonomyMeta false }}
+    {{ with .GetTerms "tags" }}
+      <div>
+        <span>Tags:</span>
+        {{ range $key, $value := . }}
+          {{- if $key }}, {{ end }}
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{- end }}
+      </div>
+    {{ end }}
+    {{ with .GetTerms "series" }}
+      <div>
+        <span>Series:</span>
+        {{ range $key, $value := . }}
+          {{- if $key }}, {{ end }}
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{- end }}
+      </div>
+    {{ end }}
   {{ end }}
 </div>

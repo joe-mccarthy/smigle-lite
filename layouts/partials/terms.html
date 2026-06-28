@@ -1,14 +1,11 @@
-{{ $title := .Title | lower }}
-{{ with .Title }}<h2>{{ . }}</h2>{{ end }}
-<ul id="terms">
-  {{ range $key, $value := .Data.Terms.ByCount }}
-    {{ if ($value.Name) }}
+{{ with .Title }}<h1>{{ . }}</h1>{{ end }}
+<ul class="terms-list">
+  {{ range $term := .Data.Terms.ByCount }}
+    {{ with $term.Page }}
       <li class="term">
-        <a
-          href="{{ $title | relURL }}/{{ $value.Name | urlize }}"
-        >
-          <span>{{ $value.Name }}</span>
-          <span> ({{ $value.Count }})</span>
+        <a href="{{ .RelPermalink }}">
+          <span>{{ .LinkTitle }}</span>
+          <span>({{ $term.Count }})</span>
         </a>
       </li>
     {{ end }}

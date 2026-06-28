@@ -1,9 +1,13 @@
-baseURL: https://joe-mccarthy.github.io/smigle-lite
+baseURL: https://joe-mccarthy.github.io/smigle-lite/
 languageCode: en-gb
 title: Example Smigle Lite
 theme: ../.
 
 pagination.pagerSize: 10
+
+markup:
+  highlight:
+    noClasses: false
 
 menu:
   main:
@@ -31,9 +35,31 @@ menu:
     name: Series
     url: /series/
     weight: 7
+  - identifier: search
+    name: Search
+    url: /search/
+    weight: 8
 
 params:
+  author: Joe McCarthy
   description: "This is the example site description. From Configuration"
+  images:
+  - android-chrome-512x512.png
+  mainSections:
+  - posts
+  style:
+    maxWidth: 820px
+    accentColor: "#386f64"
+    darkAccentColor: "#9cd4c2"
+  display:
+    footerAttribution: true
+    taxonomyMeta: true
+  toc:
+    enabled: true
+    title: Contents
+  search:
+    enabled: true
+    provider: simple
   latest:
     enabled: true
     count: 3
@@ -46,12 +72,12 @@ params:
   - name: GitHub
     url: https://github.com/joe-mccarthy/smigle-lite
   - name: "RSS"
-    url: /index.xml
+    url: index.xml
   post_nav:
     enabled: true
     show_title: false
 
 taxonomies:
-  tags: tags
+  tag: tags
   category: categories
   series: series

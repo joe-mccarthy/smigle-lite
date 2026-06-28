@@ -37,6 +37,7 @@ jobs:
           hugo \
             --gc \
             --minify \
+            --panicOnWarning \
             --themesDir ../../ \
             --theme smigle-lite \
             --destination ../.public

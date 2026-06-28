@@ -1,25 +1,41 @@
 ---
-title: "Blog Post 1"
+title: "Building a Tiny Theme"
 date: 2023-02-17T12:03:03Z
 draft: false
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper.
-tags: ["tag 1", "tag 2"]
-categories: ["category 1", "category 2"]
+summary: A compact article showing headings, lists, tables, blockquotes, and the optional table of contents.
+tags: ["hugo", "typography", "accessibility"]
+categories: ["theme design"]
 series: ["Getting Started"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut etiam sit amet nisl purus. Gravida dictum fusce ut placerat orci.
+Minimal themes are easy to make sparse and surprisingly hard to make comfortable. The trick is to give ordinary writing enough structure without turning every paragraph into a component.
 
-## Header 2
+## Goals
 
- Euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Laoreet sit amet cursus sit amet dictum sit amet justo. Rhoncus est pellentesque elit ullamcorper. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis. In arcu cursus euismod quis viverra nibh cras.
+This theme tries to keep four promises:
 
-### Header 3
+- render without tracking
+- work without JavaScript by default
+- keep typography calm and predictable
+- leave enough hooks for a personal site
 
- Commodo ullamcorper a lacus vestibulum sed arcu. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Enim sit amet venenatis urna cursus eget nunc scelerisque viverra. Lectus urna duis convallis convallis. Consequat mauris nunc congue nisi vitae suscipit tellus mauris a. Nibh mauris cursus mattis molestie a iaculis.
+> Minimal does not have to mean indifferent. A quiet theme can still have rhythm, hierarchy, and a few considerate affordances.
 
-#### Header 4
+## Defaults
 
-Risus commodo viverra maecenas accumsan lacus vel. Pellentesque id nibh tortor id aliquet lectus. Viverra aliquet eget sit amet tellus. Facilisi morbi tempus iaculis urna id volutpat. Consectetur a erat nam at. Quam elementum pulvinar etiam non quam lacus suspendisse. Bibendum at varius vel pharetra vel turpis nunc eget lorem. Amet aliquam id diam maecenas ultricies mi eget. Malesuada fames ac turpis egestas integer eget aliquet nibh praesent. Cursus risus at ultrices mi tempus imperdiet nulla malesuada. In nisl nisi scelerisque eu ultrices. Vel risus commodo viverra maecenas accumsan. Nunc consequat interdum varius sit amet mattis vulputate enim.
+The defaults should be useful before customization. A small site can use the theme as-is, while a larger site can change the colors, width, metadata, table of contents, taxonomy display, and footer attribution.
 
-Rutrum tellus pellentesque eu tincidunt tortor aliquam. Blandit turpis cursus in hac. Lectus magna fringilla urna porttitor rhoncus dolor purus non. Eget aliquet nibh praesent tristique magna sit amet. Nisi lacus sed viverra tellus. Sodales neque sodales ut etiam sit. Id cursus metus aliquam eleifend mi in. Lectus sit amet est placerat in egestas erat imperdiet. In nisl nisi scelerisque eu ultrices vitae auctor eu. Netus et malesuada fames ac turpis. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Sagittis eu volutpat odio facilisis. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam. Imperdiet proin fermentum leo vel orci porta non. Eleifend donec pretium vulputate sapien. Sed risus pretium quam vulputate dignissim. Eget sit amet tellus cras. Cras tincidunt lobortis feugiat vivamus at augue eget.
+| Feature | Default |
+| --- | --- |
+| Font | Bundled JetBrains Mono |
+| JavaScript | None |
+| Search | Off |
+| Table of contents | On for posts with headings |
+
+## Customization
+
+Most customizations happen in `params`. That keeps the theme files untouched and lets each site keep its own taste.
+
+### Small Changes
+
+Start with a link color, a max width, and whether you want taxonomy metadata below each post title. Those three settings change the feel of a site without changing the structure.

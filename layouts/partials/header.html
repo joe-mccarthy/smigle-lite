@@ -1,12 +1,16 @@
 <header>
   <div id="brand">
-      <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
+      <a href="{{ .Site.Home.RelPermalink }}" class="site-title">{{ .Site.Title }}</a>
   </div>
-  <nav>
+  <nav aria-label="Main navigation">
+    {{ $currentPage := . }}
     {{ with .Site.Menus.main }}
       {{ range $index, $value := . }}
+        {{ $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+        {{ if and (not $active) (eq .Identifier "home") $currentPage.IsHome }}{{ $active = true }}{{ end }}
+        {{ if and (not $active) (ne .Identifier "home") (hasPrefix $currentPage.RelPermalink .URL) }}{{ $active = true }}{{ end }}
         {{ if $index }} | {{ end }}
-        <a href="{{ .URL }}"><b>{{ .Name }}</b></a>
+        <a href="{{ .URL }}"{{ if $active }} aria-current="page"{{ end }}><b>{{ .Name }}</b></a>
       {{ end }}
     {{ end }}
   </nav>

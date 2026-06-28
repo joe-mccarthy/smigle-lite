@@ -1,14 +1,9 @@
-<head>
   <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style type="text/css">body{font-family:"JetBrains Mono",monospace;}</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">body{font-family:"JetBrains Mono",monospace;}</style>
   {{ partial "style-vars.html" . }}
 
-  {{ $title := .Site.Title }}
-  {{ if and .Title (ne .Title .Site.Title) }}
-    {{ $title = printf "%s | %s" .Title .Site.Title }}
-  {{ end }}
-  <title>{{ $title }}</title>
+  {{ $title := partial "page-title.html" . }}
 
   {{ $description := "" }}
   {{ with .Description }}
@@ -75,4 +70,3 @@
   <link rel="mask-icon" href="{{ "safari-pinned-tab.svg" | relURL }}" color="#2b2b2b">
   <meta name="theme-color" content="#ffffff">
   {{ partial "jsonld.html" . }}
-</head>

@@ -59,6 +59,7 @@ jobs:
           hugo \
             --gc \
             --minify \
+            --noBuildLock \
             --panicOnWarning \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --source . \

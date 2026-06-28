@@ -37,6 +37,7 @@ jobs:
           hugo \
             --gc \
             --minify \
+            --noBuildLock \
             --panicOnWarning \
             --themesDir ../../ \
             --theme smigle-lite \

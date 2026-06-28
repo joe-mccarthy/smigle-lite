@@ -9,10 +9,7 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+permissions: {}
 
 concurrency:
   group: pages
@@ -26,6 +23,8 @@ jobs:
   build:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     env:
       HUGO_VERSION: 0.128.0
 
@@ -60,6 +59,8 @@ jobs:
           hugo \
             --gc \
             --minify \
+            --noBuildLock \
+            --panicOnWarning \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --source . \
             --themesDir ../../ \
@@ -73,6 +74,9 @@ jobs:
 
   deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

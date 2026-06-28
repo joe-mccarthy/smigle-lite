@@ -5,6 +5,7 @@
 /assets/jsconfig.json
 hugo_stats.json
 example-site/public/
+.public
 
 # Executable may be added to repository
 hugo.exe
@@ -12,5 +13,4 @@ hugo.darwin
 hugo.linux
 
 # Temporary lock file while building
-/.hugo_build.lock
-
+.hugo_build.lock

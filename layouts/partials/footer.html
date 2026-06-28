@@ -5,26 +5,40 @@
       Find me around the web:
       <br />
       {{ range $i, $e := .Site.Params.social }}
+        {{ $url := .url }}
+        {{ $isExternal := or (hasPrefix $url "http://") (hasPrefix $url "https://") }}
+        {{ $href := $url }}
+        {{ if not $isExternal }}
+          {{ $href = replaceRE "^/" "" $url | relURL }}
+        {{ end }}
         {{ if $i }} | {{ end }}
-        <a href="{{ .url }}" target="_blank">{{ .name }}</a>
+        <a href="{{ $href }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .name }}</a>
       {{ end }}
     </p>
   {{ end }}
   <p class="copyright">
     Copyright © {{ now.Format "2006"}}
-    <a href="{{ .Site.BaseURL }}"><strong>{{ default "Blog Author" .Site.Params.Author }}</strong></a>.
+    <a href="{{ .Site.Home.RelPermalink }}"><strong>{{ default "Blog Author" .Site.Params.author }}</strong></a>.
     {{ if .Site.Params.license }}
+    {{ $licenseURL := .Site.Params.license.url }}
+    {{ $isExternalLicense := or (hasPrefix $licenseURL "http://") (hasPrefix $licenseURL "https://") }}
+    {{ $licenseHref := $licenseURL }}
+    {{ if not $isExternalLicense }}
+      {{ $licenseHref = replaceRE "^/" "" $licenseURL | relURL }}
+    {{ end }}
     This work is licensed under the
-    <a href="{{ .Site.Params.license.url}}" target="_blank">{{ .Site.Params.license.name }}</a> license.
+    <a href="{{ $licenseHref }}"{{ if $isExternalLicense }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Site.Params.license.name }}</a> license.
     {{ end }}
   </p>
-  <p class="builtWith">
-    Built with
-    <a href="http://www.gohugo.io/">Hugo</a>,
-    using a <a href="https://github.com/joe-mccarthy/smigle-lite">modified version</a> of the theme
-    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
-    which was influenced by the theme
-    <a href="https://github.com/colorchestra/smol">smol</a>.
-  </p>
+  {{ if ne .Site.Params.display.footerAttribution false }}
+    <p class="builtWith">
+      Built with
+      <a href="https://gohugo.io/">Hugo</a>,
+      using a <a href="https://github.com/joe-mccarthy/smigle-lite">modified version</a> of the theme
+      <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+      which was influenced by the theme
+      <a href="https://github.com/colorchestra/smol">smol</a>.
+    </p>
+  {{ end }}
   {{ partial "blank_footer.html" . }}
 </footer>

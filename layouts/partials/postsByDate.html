@@ -1,6 +1,6 @@
 {{ range .RegularPagesRecursive.GroupByDate "2006" }}
   <h3>{{ .Key }}</h3>
-  <ul id="postsByDate">
+  <ul class="posts-by-date">
     {{ range .Pages }}
       <li>
         <div class="date">

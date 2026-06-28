@@ -2,27 +2,11 @@
   <strong>
     <time>{{ .Date.Format (default "2006-01-02" .Site.Params.dateFmt) }}</time>  
   </strong>
-  {{ with .Params.categories }}<span><strong>in</strong></span>{{ end }}
-    {{ range $key, $value := .Params.categories -}}
-      {{- if $key }}, {{ end }}
-      <a href = "{{ $.Site.BaseURL }}categories/{{ $value | urlize | lower  }}">{{$value}}</a>
-    {{- end }}
-  {{ with .Params.tags }}
-    <div>
-      <span>Tags:</span>
-      {{ range $key, $value := . }}
-        {{- if $key }}, {{ end }}
-        <a href = "{{ $.Site.BaseURL }}tags/{{ $value | urlize | lower  }}">{{$value}}</a>
-      {{- end }}
-    </div>
-  {{ end }}
-  {{ with .Params.series }}
-    <div>
-      <span>Series:</span>
-      {{ range $key, $value := . }}
-        {{- if $key }}, {{ end }}
-        <a href = "{{ $.Site.BaseURL }}series/{{ $value | urlize | lower  }}">{{$value}}</a>
-      {{- end }}
-    </div>
+  {{ if ne .Site.Params.display.taxonomyMeta false }}
+    {{ with .GetTerms "categories" }}
+      <span><strong>in</strong></span>
+      {{ partial "taxonomyLinks.html" . }}
+    {{ end }}
+    {{ partial "postMetaTaxonomyRows.html" . }}
   {{ end }}
 </div>

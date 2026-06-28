@@ -3,12 +3,12 @@
 
 name = "smigle-lite"
 license = "MIT"
-licenselink = "https:/github.com/joe-mccarthy/smigle-lite/src/branch/main/README.md"
-description = "Minimal Hugo theme using a Monospace font and free from tracking or external dependencies"
-homepage = ""https:/github.com/joe-mccarthy/smigle-lite"
-tags = ["blog", "portfolio", "minimal", "monospace", "simple", "clean", "light", "responsive", "fast", "no-js", "no-tracking", "privacy"]
-features = []
-min_version = "0.41.0"
+licenselink = "https://github.com/joe-mccarthy/smigle-lite/blob/main/LICENSE"
+description = "Minimal Hugo theme using bundled JetBrains Mono and free from tracking or runtime external dependencies"
+homepage = "https://github.com/joe-mccarthy/smigle-lite"
+tags = ["blog", "portfolio", "minimal", "monospace", "simple", "clean", "light", "responsive", "fast", "no-js", "no-tracking", "privacy", "accessibility", "seo"]
+features = ["blog", "taxonomies", "dark mode", "post navigation", "table of contents", "shortcodes", "json-ld", "open graph", "pagefind search"]
+min_version = "0.128.0"
 
 [author]
   name = "Joe McCarthy"
@@ -24,4 +24,4 @@ min_version = "0.41.0"
   [module.hugoVersion]
     extended = false
     max = ""
-    min = "0.41.0"
+    min = "0.128.0"

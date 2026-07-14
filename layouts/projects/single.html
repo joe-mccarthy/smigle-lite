@@ -1,0 +1,41 @@
+{{ define "main" }}
+  {{ $hero := "" }}
+  {{ with .Params.heroImage }}
+    {{ $hero = $.Resources.GetMatch . }}
+  {{ end }}
+  {{ $pages := where .Site.RegularPages.ByWeight "Section" "projects" }}
+  <main>
+    <article class="project">
+      {{ with $hero }}
+        <img class="project-hero-image" src="{{ .RelPermalink }}" alt="{{ $.Params.heroAlt | default $.Title }}">
+      {{ end }}
+      <h1 class="title">{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<h3 class="subtitle">{{ . }}</h3>{{ end }}
+      <div class="content">{{ .Content }}</div>
+    </article>
+  </main>
+
+  {{ if ne .Site.Params.post_nav.enabled false }}
+    {{ $showTitle := .Site.Params.post_nav.show_title }}
+    <nav class="post-nav" aria-label="Project navigation">
+      <div class="post-nav-left">
+        {{ with $pages.Next . }}
+          {{ if $showTitle }}
+            <a href="{{ .RelPermalink }}">&#8612; {{ .Title }}</a>
+          {{ else }}
+            <a href="{{ .RelPermalink }}">&#8612; Previous Project</a>
+          {{ end }}
+        {{ end }}
+      </div>
+      <div class="post-nav-right">
+        {{ with $pages.Prev . }}
+          {{ if $showTitle }}
+            <a href="{{ .RelPermalink }}">{{ .Title }} &#8614;</a>
+          {{ else }}
+            <a href="{{ .RelPermalink }}">Next Project &#8614;</a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </nav>
+  {{ end }}
+{{ end }}

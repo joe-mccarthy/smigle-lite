@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Orbit Planner preview</title>
+  <desc id="desc">A release calendar with launch milestones and review checkpoints.</desc>
+  <rect width="1200" height="675" fill="#eef2fb"/>
+  <rect x="90" y="76" width="1020" height="520" rx="18" fill="#fff" stroke="#c7d1e8" stroke-width="3"/>
+  <text x="136" y="132" fill="#314f86" font-family="monospace" font-size="36" font-weight="700">Orbit Planner</text>
+  <rect x="136" y="180" width="928" height="72" rx="12" fill="#e7edfb"/>
+  <rect x="136" y="290" width="210" height="210" rx="12" fill="#f8faff" stroke="#c7d1e8" stroke-width="3"/>
+  <rect x="376" y="290" width="210" height="210" rx="12" fill="#f8faff" stroke="#c7d1e8" stroke-width="3"/>
+  <rect x="616" y="290" width="210" height="210" rx="12" fill="#f8faff" stroke="#c7d1e8" stroke-width="3"/>
+  <rect x="856" y="290" width="210" height="210" rx="12" fill="#f8faff" stroke="#c7d1e8" stroke-width="3"/>
+  <circle cx="240" cy="386" r="38" fill="#4b6fb4"/>
+  <circle cx="480" cy="386" r="38" fill="#7893cc"/>
+  <circle cx="720" cy="386" r="38" fill="#4b6fb4"/>
+  <circle cx="960" cy="386" r="38" fill="#7893cc"/>
+  <path d="M278 386h164m76 0h164m76 0h164" stroke="#aebce0" stroke-width="10" stroke-linecap="round"/>
+</svg>

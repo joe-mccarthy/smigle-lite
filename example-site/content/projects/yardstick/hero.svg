@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Yardstick preview</title>
+  <desc id="desc">A measurement notebook with experiment metrics and outcome notes.</desc>
+  <rect width="1200" height="675" fill="#f1f5ef"/>
+  <rect x="92" y="78" width="1016" height="518" rx="18" fill="#fff" stroke="#cbdcc4" stroke-width="3"/>
+  <text x="136" y="132" fill="#476b3d" font-family="monospace" font-size="36" font-weight="700">Yardstick</text>
+  <rect x="136" y="190" width="392" height="300" rx="14" fill="#f8fbf6" stroke="#cbdcc4" stroke-width="3"/>
+  <rect x="594" y="190" width="472" height="300" rx="14" fill="#f8fbf6" stroke="#cbdcc4" stroke-width="3"/>
+  <rect x="176" y="402" width="44" height="52" rx="5" fill="#86a878"/>
+  <rect x="250" y="352" width="44" height="102" rx="5" fill="#5f8a50"/>
+  <rect x="324" y="308" width="44" height="146" rx="5" fill="#86a878"/>
+  <rect x="398" y="260" width="44" height="194" rx="5" fill="#5f8a50"/>
+  <rect x="638" y="246" width="318" height="16" rx="8" fill="#5f8a50"/>
+  <rect x="638" y="296" width="256" height="16" rx="8" fill="#a8c59d"/>
+  <rect x="638" y="346" width="362" height="16" rx="8" fill="#a8c59d"/>
+  <path d="M640 430l32 32 74-88" fill="none" stroke="#5f8a50" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

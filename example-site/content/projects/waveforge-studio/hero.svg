@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Waveforge Studio preview</title>
+  <desc id="desc">An audio sketchbook with waveform tracks and production notes.</desc>
+  <rect width="1200" height="675" fill="#eef6f8"/>
+  <rect x="92" y="78" width="1016" height="518" rx="18" fill="#fff" stroke="#bdd7df" stroke-width="3"/>
+  <text x="136" y="132" fill="#2d6675" font-family="monospace" font-size="36" font-weight="700">Waveforge Studio</text>
+  <rect x="136" y="188" width="930" height="80" rx="12" fill="#f4fbfd" stroke="#bdd7df" stroke-width="3"/>
+  <rect x="136" y="306" width="930" height="80" rx="12" fill="#f4fbfd" stroke="#bdd7df" stroke-width="3"/>
+  <rect x="136" y="424" width="930" height="80" rx="12" fill="#f4fbfd" stroke="#bdd7df" stroke-width="3"/>
+  <path d="M170 228h34l18-28 28 58 28-42 22 20h700" fill="none" stroke="#3b8193" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M170 346h54l20-26 30 52 26-34 24 12h676" fill="none" stroke="#79acba" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M170 464h42l28-42 28 72 26-48 28 18h678" fill="none" stroke="#3b8193" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

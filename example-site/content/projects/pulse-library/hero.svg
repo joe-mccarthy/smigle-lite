@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Pulse Library preview</title>
+  <desc id="desc">A component reference library with cards and accessibility notes.</desc>
+  <rect width="1200" height="675" fill="#f3f0f8"/>
+  <rect x="92" y="78" width="1016" height="518" rx="18" fill="#fff" stroke="#d2c8de" stroke-width="3"/>
+  <text x="136" y="132" fill="#5a4776" font-family="monospace" font-size="36" font-weight="700">Pulse Library</text>
+  <rect x="136" y="182" width="286" height="318" rx="14" fill="#fbf9ff" stroke="#d2c8de" stroke-width="3"/>
+  <rect x="456" y="182" width="286" height="318" rx="14" fill="#fbf9ff" stroke="#d2c8de" stroke-width="3"/>
+  <rect x="776" y="182" width="286" height="318" rx="14" fill="#fbf9ff" stroke="#d2c8de" stroke-width="3"/>
+  <rect x="174" y="228" width="184" height="20" rx="10" fill="#735c99"/>
+  <rect x="494" y="228" width="170" height="20" rx="10" fill="#735c99"/>
+  <rect x="814" y="228" width="154" height="20" rx="10" fill="#735c99"/>
+  <rect x="174" y="286" width="210" height="14" rx="7" fill="#c5b6d8"/>
+  <rect x="174" y="324" width="162" height="14" rx="7" fill="#c5b6d8"/>
+  <rect x="494" y="286" width="204" height="14" rx="7" fill="#c5b6d8"/>
+  <rect x="814" y="286" width="188" height="14" rx="7" fill="#c5b6d8"/>
+  <path d="M178 430l34 34 76-90" fill="none" stroke="#4f8a58" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

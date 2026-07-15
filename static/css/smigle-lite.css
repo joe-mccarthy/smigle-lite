@@ -193,6 +193,10 @@ article {
   margin-top: 0.75rem;
 }
 
+.section-header .content {
+  margin-top: 1rem;
+}
+
 .content > * + * {
   margin-top: 1.05rem;
 }
@@ -299,6 +303,122 @@ footer {
   align-items: center;
   margin-top: 2rem;
   color: var(--mutedcolor);
+}
+
+.projects-hero {
+  padding: 1rem 0 0;
+}
+
+.projects-hero h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  line-height: 1.15;
+}
+
+.projects-lede {
+  margin: 0.65rem 0 0;
+  color: var(--mutedcolor);
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.projects-intro {
+  max-width: 64ch;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--bordercolor);
+  border-radius: var(--radius);
+  background: var(--bgcolor);
+}
+
+.project-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0.9rem;
+}
+
+.project-card .title {
+  margin: 0;
+  font-size: 1.18rem;
+  line-height: 1.25;
+}
+
+.project-card-image {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--bordercolor);
+  color: var(--mutedcolor);
+  background: var(--codebgcolor);
+  text-decoration: none;
+}
+
+.project-card-image img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+}
+
+.project-card-image span {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.project-excerpt {
+  margin: 0.65rem 0 0;
+  color: var(--mutedcolor);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.project-card-body .project-more {
+  margin-top: auto;
+  padding-top: 0.9rem;
+}
+
+.project-hero-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 1.25rem;
+  border: 1px solid var(--bordercolor);
+  border-radius: var(--radius);
+  background: var(--codebgcolor);
+  object-fit: cover;
+}
+
+.project-more {
+  margin: 0.95rem 0 0;
+}
+
+@media (max-width: 720px) {
+  .projects-hero h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 img {

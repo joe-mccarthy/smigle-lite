@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Timber Trace preview</title>
+  <desc id="desc">A provenance dashboard for timber batches and supplier records.</desc>
+  <rect width="1200" height="675" fill="#f7efe7"/>
+  <rect x="92" y="78" width="1016" height="518" rx="18" fill="#fff" stroke="#dfc7ad" stroke-width="3"/>
+  <text x="136" y="132" fill="#754f2c" font-family="monospace" font-size="36" font-weight="700">Timber Trace</text>
+  <rect x="136" y="184" width="930" height="120" rx="14" fill="#fff8f0" stroke="#dfc7ad" stroke-width="3"/>
+  <path d="M172 244h822" stroke="#b9804a" stroke-width="18" stroke-linecap="round"/>
+  <path d="M212 244c60-44 120 44 180 0s120-44 180 0 120 44 180 0 120-44 180 0" fill="none" stroke="#e0b07f" stroke-width="8" stroke-linecap="round"/>
+  <rect x="136" y="354" width="432" height="118" rx="12" fill="#fff8f0" stroke="#dfc7ad" stroke-width="3"/>
+  <rect x="634" y="354" width="432" height="118" rx="12" fill="#fff8f0" stroke="#dfc7ad" stroke-width="3"/>
+  <rect x="170" y="394" width="250" height="14" rx="7" fill="#b9804a"/>
+  <rect x="668" y="394" width="286" height="14" rx="7" fill="#b9804a"/>
+  <rect x="170" y="432" width="178" height="14" rx="7" fill="#dfc7ad"/>
+  <rect x="668" y="432" width="204" height="14" rx="7" fill="#dfc7ad"/>
+</svg>

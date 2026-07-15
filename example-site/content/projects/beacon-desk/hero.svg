@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Beacon Desk preview</title>
+  <desc id="desc">A support triage board with priority lanes and repair tickets.</desc>
+  <rect width="1200" height="675" fill="#f1eef8"/>
+  <rect x="86" y="78" width="1028" height="520" rx="18" fill="#ffffff" stroke="#d1c9e3" stroke-width="3"/>
+  <text x="132" y="132" fill="#403567" font-family="monospace" font-size="36" font-weight="700">Beacon Desk</text>
+  <rect x="132" y="178" width="280" height="354" rx="14" fill="#fbf9ff" stroke="#d1c9e3" stroke-width="3"/>
+  <rect x="460" y="178" width="280" height="354" rx="14" fill="#fbf9ff" stroke="#d1c9e3" stroke-width="3"/>
+  <rect x="788" y="178" width="280" height="354" rx="14" fill="#fbf9ff" stroke="#d1c9e3" stroke-width="3"/>
+  <text x="164" y="230" fill="#6b5b95" font-family="monospace" font-size="24" font-weight="700">Urgent</text>
+  <text x="492" y="230" fill="#6b5b95" font-family="monospace" font-size="24" font-weight="700">Scheduled</text>
+  <text x="820" y="230" fill="#6b5b95" font-family="monospace" font-size="24" font-weight="700">Done</text>
+  <rect x="164" y="266" width="216" height="72" rx="9" fill="#eee8fb"/>
+  <rect x="164" y="360" width="216" height="72" rx="9" fill="#eee8fb"/>
+  <rect x="492" y="266" width="216" height="72" rx="9" fill="#eee8fb"/>
+  <rect x="492" y="360" width="216" height="72" rx="9" fill="#eee8fb"/>
+  <rect x="820" y="266" width="216" height="72" rx="9" fill="#e6f2e8"/>
+  <rect x="820" y="360" width="216" height="72" rx="9" fill="#e6f2e8"/>
+  <rect x="190" y="292" width="150" height="11" rx="6" fill="#6b5b95"/>
+  <rect x="190" y="318" width="112" height="11" rx="6" fill="#aa9bc9"/>
+  <rect x="518" y="292" width="145" height="11" rx="6" fill="#6b5b95"/>
+  <rect x="518" y="318" width="118" height="11" rx="6" fill="#aa9bc9"/>
+  <rect x="846" y="292" width="135" height="11" rx="6" fill="#4f8a58"/>
+  <rect x="846" y="318" width="104" height="11" rx="6" fill="#97bd9d"/>
+</svg>

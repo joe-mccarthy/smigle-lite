@@ -1,0 +1,38 @@
+{{ define "main" }}
+  {{ $projects := .Pages.ByWeight }}
+  {{ $paginator := .Paginate $projects }}
+  <main class="projects-index">
+    <header class="projects-hero">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="projects-lede">{{ . }}</p>{{ end }}
+      {{ with .Content }}<div class="content projects-intro">{{ . }}</div>{{ end }}
+    </header>
+
+    {{ if gt (len $paginator.Pages) 0 }}
+      <div class="project-grid">
+        {{ range $paginator.Pages }}
+          {{ $project := . }}
+          {{ $hero := "" }}
+          {{ with $project.Params.heroImage }}
+            {{ $hero = $project.Resources.GetMatch . }}
+          {{ end }}
+          <article class="project-card">
+            <a class="project-card-image" href="{{ .RelPermalink }}" aria-label="Read more about {{ .Title }}">
+              {{ with $hero }}
+                <img src="{{ .RelPermalink }}" alt="{{ $project.Params.heroAlt | default $project.Title }}">
+              {{ else }}
+                <span aria-hidden="true">{{ .Title }}</span>
+              {{ end }}
+            </a>
+            <div class="project-card-body">
+              <h2 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              <p class="project-excerpt">{{ .Summary | plainify }}</p>
+              <p class="project-more"><a href="{{ .RelPermalink }}">Read more</a></p>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+      {{ partial "pagination.html" . }}
+    {{ end }}
+  </main>
+{{ end }}

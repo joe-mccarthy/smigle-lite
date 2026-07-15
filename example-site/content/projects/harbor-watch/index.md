@@ -1,21 +1,11 @@
 ---
 title: "Harbor Watch"
-date: 2024-10-08T09:00:00Z
 draft: false
 weight: 40
 summary: "A calm sensor digest for small marinas, focused on tide windows, wind alerts, and maintenance checks."
 subtitle: "A calm sensor digest for small marina operations."
 heroImage: "hero.svg"
 heroAlt: "Dashboard preview for Harbor Watch showing tide, wind, and maintenance panels."
-year: 2024
-projectType: "Sensor dashboard"
-status: "Case study"
-role: "Dashboard design"
-impact: "Calmer operations checks"
-accent: "#2f6f98"
-stack: ["Go", "MQTT", "Hugo"]
-demo: "https://example.org/projects/harbor-watch"
-repo: "https://example.org/repos/harbor-watch"
 ---
 
 ## Problem

@@ -1,15 +1,11 @@
 ---
 title: "Timber Trace"
-date: 2022-07-14T09:00:00Z
 draft: false
 weight: 100
 summary: "A provenance log for small furniture studios tracking wood batches, suppliers, finishes, and care notes."
 subtitle: "A provenance log for furniture studios."
 heroImage: "hero.svg"
 heroAlt: "Provenance preview for Timber Trace showing supplier records and wood batch notes."
-year: 2022
-status: "Prototype"
-role: "Data model"
 ---
 
 ## Problem

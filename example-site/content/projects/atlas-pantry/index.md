@@ -1,21 +1,11 @@
 ---
 title: "Atlas Pantry"
-date: 2026-02-12T09:00:00Z
 draft: false
 weight: 10
 summary: "An offline recipe and stock planner that helps shared kitchens avoid duplicate shopping and forgotten staples."
 subtitle: "An offline recipe and stock planner for shared kitchens."
 heroImage: "hero.svg"
 heroAlt: "Dashboard preview for Atlas Pantry showing pantry stock and recipe planning cards."
-year: 2026
-projectType: "Offline tool"
-status: "Prototype"
-role: "Product design"
-impact: "Shared kitchen planning"
-accent: "#386f64"
-stack: ["Hugo", "SQLite", "Service workers"]
-demo: "https://example.org/projects/atlas-pantry"
-repo: "https://example.org/repos/atlas-pantry"
 ---
 
 ## Problem

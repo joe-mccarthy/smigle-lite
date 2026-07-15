@@ -1,15 +1,11 @@
 ---
 title: "Waveforge Studio"
-date: 2022-03-09T09:00:00Z
 draft: false
 weight: 110
 summary: "An audio sketchbook for producers collecting loops, processing chains, notes, and release candidates."
 subtitle: "An audio sketchbook for producers."
 heroImage: "hero.svg"
 heroAlt: "Audio preview for Waveforge Studio showing waveform tracks and production notes."
-year: 2022
-status: "Archived"
-role: "Prototype build"
 ---
 
 ## Problem

@@ -1,21 +1,11 @@
 ---
 title: "Lumen Ledger"
-date: 2024-04-18T09:00:00Z
 draft: false
 weight: 50
 summary: "A privacy-first household energy journal that turns meter readings into monthly patterns and practical notes."
 subtitle: "A household energy journal built around private notes."
 heroImage: "hero.svg"
 heroAlt: "Journal preview for Lumen Ledger showing household energy readings and monthly notes."
-year: 2024
-projectType: "Private journal"
-status: "Archived"
-role: "Full build"
-impact: "Energy patterns in context"
-accent: "#a8623d"
-stack: ["Hugo", "Charts CSS", "YAML"]
-demo: "https://example.org/projects/lumen-ledger"
-repo: "https://example.org/repos/lumen-ledger"
 ---
 
 ## Problem

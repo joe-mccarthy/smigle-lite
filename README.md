@@ -35,11 +35,12 @@ Smigle Lite streamlines the original theme by:
 * Adding JSON-LD, Open Graph, Twitter card, canonical, and author metadata
 * Adding accessible skip links and active navigation state
 * Adding small content shortcodes for figures, asides, details, and external links
+* Adding a project showcase section with project cards and dedicated project pages
 * Redesigning taxonomy pages as simple lists with counts
 * Updating the footer with proper attributions
 * Various spacing improvements and CSS optimizations
-* Post Navigations
-* Recent Posts displayed on each post configurable in the config file
+* Adding configurable post and project navigation
+* Adding configurable latest posts on single post pages
 
 ### Theme Structure
 
@@ -48,10 +49,12 @@ smigle-lite/
 ├── archetypes/         # Template files for new content
 ├── example-site/       # Demo site with example content
 ├── layouts/            # Hugo template files
-└── static/             # Static files (images, etc.)
+└── static/             # Static assets such as CSS, fonts, and icons
 ```
 
 ## Installation
+
+Smigle Lite requires Hugo `0.128.0` or newer.
 
 ### As a Git Submodule (Recommended)
 
@@ -154,6 +157,10 @@ menu:
     name: Posts
     url: /posts/
     weight: 3
+  - identifier: projects
+    name: Projects
+    url: /projects/
+    weight: 4
   - identifier: categories
     name: Categories
     url: /categories/
@@ -301,6 +308,10 @@ menu:
     name: Posts
     url: /posts/
     weight: 3
+  - identifier: projects
+    name: Projects
+    url: /projects/
+    weight: 4
   - identifier: categories
     name: Categories
     url: /categories/
@@ -395,6 +406,45 @@ menu:
 ---
 ```
 
+### Project Showcase and Project Pages
+
+Smigle Lite ships dedicated layouts for a portfolio-style `projects` section. The project index at `/projects/` renders a responsive card grid, while each project page renders its own hero image, title, subtitle, and body content.
+
+Create the section landing page:
+
+```yaml
+---
+title: "Projects"
+subtitle: "Selected builds, prototypes, and finished work."
+draft: false
+summary: "A project showcase landing page."
+---
+```
+
+Create project pages as page bundles so each project can keep its hero image beside its markdown:
+
+```bash
+hugo new content/projects/my-project/index.md
+```
+
+The bundled `projects` archetype includes the common fields:
+
+```yaml
+---
+title: "My Project"
+draft: false
+weight: 10
+summary: "A short summary for the project card."
+subtitle: "A short subtitle for the project page."
+heroImage: "hero.svg"
+heroAlt: "Preview of My Project."
+---
+```
+
+The project archetype includes only fields the bundled layouts render or use: `title`, `draft`, `weight`, `summary`, `subtitle`, `heroImage`, and `heroAlt`. If `heroImage` is not set, project cards fall back to a text title block.
+
+Project cards are ordered by `weight`. Set `params.post_nav.enabled: false` to hide previous and next project links, or `params.post_nav.show_title: true` to show project titles in those links.
+
 ## Customization
 
 ### Custom CSS
@@ -428,10 +478,16 @@ Smigle Lite works best with the following content structure:
 
 ```
 content/
-├── posts/           # Blog posts
-├── pages/           # Static pages
-└── about/           # About page
-    └── index.md
+├── posts/                # Blog posts
+├── projects/             # Project showcase and project pages
+│   ├── _index.md
+│   └── my-project/
+│       ├── index.md
+│       └── hero.svg
+├── search/
+│   └── index.md          # Search page with layout: search
+└── about/
+    └── index.md          # About page
 ```
 
 ### Front Matter Options
@@ -505,6 +561,8 @@ Search is optional and off by default. The built-in `simple` provider creates a 
 1. Create a search page with `layout: search`
 2. Set `params.search.enabled: true`
 3. Set `params.search.provider: simple`
+
+Add `searchExclude: true` to a page's front matter to keep it out of the built-in search index.
 
 For larger sites, set `params.search.provider: pagefind`, build the Hugo site, then run Pagefind against the generated site, for example `pagefind --site public`. The Pagefind provider loads `/pagefind/pagefind-ui.css` and `/pagefind/pagefind-ui.js` from your own site.
 

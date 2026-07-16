@@ -1,15 +1,11 @@
 ---
 title: "Orbit Planner"
-date: 2023-12-04T09:00:00Z
 draft: false
 weight: 60
 summary: "A lightweight launch calendar for small teams coordinating releases, reviews, and dependency checks."
 subtitle: "A release planning calendar for small product teams."
 heroImage: "hero.svg"
 heroAlt: "Calendar preview for Orbit Planner showing launch milestones and review checkpoints."
-year: 2023
-status: "Archived"
-role: "Planning system"
 ---
 
 ## Problem

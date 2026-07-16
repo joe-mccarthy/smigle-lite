@@ -1,21 +1,11 @@
 ---
 title: "Canopy Notes"
-date: 2025-07-21T09:00:00Z
 draft: false
 weight: 30
 summary: "A field notebook for urban tree surveys that keeps observations tidy, searchable, and easy to publish."
 subtitle: "A publishable field notebook for urban tree surveys."
 heroImage: "hero.svg"
 heroAlt: "Notebook preview for Canopy Notes showing tree observations and a small map panel."
-year: 2025
-projectType: "Publishing system"
-status: "Live"
-role: "Content model"
-impact: "Survey notes to maps"
-accent: "#3f7d42"
-stack: ["Hugo", "Markdown", "GeoJSON"]
-demo: "https://example.org/projects/canopy-notes"
-repo: "https://example.org/repos/canopy-notes"
 ---
 
 ## Problem

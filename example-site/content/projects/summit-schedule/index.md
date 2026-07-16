@@ -1,15 +1,11 @@
 ---
 title: "Summit Schedule"
-date: 2022-11-10T09:00:00Z
 draft: false
 weight: 90
 summary: "A conference schedule generator that turns session proposals into tracks, speaker pages, and printable agendas."
 subtitle: "A static conference schedule generator."
 heroImage: "hero.svg"
 heroAlt: "Schedule preview for Summit Schedule showing conference tracks and session blocks."
-year: 2022
-status: "Case study"
-role: "Static site build"
 ---
 
 ## Problem

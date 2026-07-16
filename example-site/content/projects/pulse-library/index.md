@@ -1,15 +1,11 @@
 ---
 title: "Pulse Library"
-date: 2023-08-16T09:00:00Z
 draft: false
 weight: 70
 summary: "A small design reference library for teams collecting patterns, component notes, and accessibility checks."
 subtitle: "A design reference library for repeatable interface patterns."
 heroImage: "hero.svg"
 heroAlt: "Library preview for Pulse Library showing component cards and accessibility notes."
-year: 2023
-status: "Live"
-role: "Design documentation"
 ---
 
 ## Problem

@@ -1,15 +1,11 @@
 ---
 title: "Yardstick"
-date: 2021-10-28T09:00:00Z
 draft: false
 weight: 120
 summary: "A measurement notebook for tiny experiments, tracking hypotheses, sample sizes, observations, and outcomes."
 subtitle: "A measurement notebook for small experiments."
 heroImage: "hero.svg"
 heroAlt: "Notebook preview for Yardstick showing experiment metrics and outcome notes."
-year: 2021
-status: "Archived"
-role: "Research workflow"
 ---
 
 ## Problem

@@ -1,15 +1,11 @@
 ---
 title: "Stitch Log"
-date: 2023-05-25T09:00:00Z
 draft: false
 weight: 80
 summary: "A repair journal for textile workshops that records materials, faults, fixes, and follow-up care."
 subtitle: "A repair journal for textile workshops."
 heroImage: "hero.svg"
 heroAlt: "Journal preview for Stitch Log showing repair records and fabric swatches."
-year: 2023
-status: "Prototype"
-role: "Information architecture"
 ---
 
 ## Problem

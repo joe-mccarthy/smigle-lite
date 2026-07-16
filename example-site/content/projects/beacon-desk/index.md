@@ -1,21 +1,11 @@
 ---
 title: "Beacon Desk"
-date: 2025-11-03T09:00:00Z
 draft: false
 weight: 20
 summary: "A triage board for field support teams that turns incoming reports into clear, priority-ranked repair work."
 subtitle: "A triage board for field support and repair teams."
 heroImage: "hero.svg"
 heroAlt: "Dashboard preview for Beacon Desk showing repair tickets grouped by priority."
-year: 2025
-projectType: "Operations app"
-status: "Pilot"
-role: "Frontend build"
-impact: "Faster repair triage"
-accent: "#6b5b95"
-stack: ["Hugo", "Alpine.js", "CSV"]
-demo: "https://example.org/projects/beacon-desk"
-repo: "https://example.org/repos/beacon-desk"
 ---
 
 ## Problem

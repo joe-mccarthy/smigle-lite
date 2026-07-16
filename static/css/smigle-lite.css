@@ -328,7 +328,7 @@ footer {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
   gap: 1.1rem;
   margin-top: 2rem;
 }
@@ -415,9 +415,9 @@ footer {
   }
 }
 
-@media (max-width: 620px) {
+@media (min-width: 52rem) {
   .project-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
